@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const PranayamaSchema = new Schema({
+let Pranayama = new Schema({
   name: {
     type: String,
     required: true,
@@ -12,4 +12,4 @@ const PranayamaSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Pranayama", PranayamaSchema);
+module.exports = mongoose.model("Pranayama", Pranayama);

@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import Navbar from "./components/navbar.component";
+import ShowPranayama from "./components/show-pranayama.component";
+import EditPranayama from "./components/edit-pranayama.component";
+import CreatePranayama from "./components/create-pranayama.component";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        {/* <Link to="/enabling">
+          <button>Enabling Route</button>
+        </Link>
+        <Link to="/disabling">
+          <button>Disabling Route</button>
+        </Link> */}
+
+        {/* <Navbar /> */}
+
+        <Route path="/" exact component={Navbar} />
+        <Route path="/:id" component={ShowPranayama} />
+        <Route path="/edit/:id" component={EditPranayama} />
+        <Route path="/create" component={CreatePranayama} />
+        <Route />
+      </div>
+    </Router>
   );
 }
 

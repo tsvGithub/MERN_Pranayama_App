@@ -9,6 +9,12 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 //-------------------------
+//ROUTES
+const enablingRouter = require("./routes/enabling");
+
+app.use("/enabling", enablingRouter);
+
+//-------------------------
 //MongoDB Atlas
 const URI = "mongodb+srv://only4Me:only4MeDB@cluster0-ztzuu.mongodb.net/pranayama?retryWrites=true&w=majority";
 mongoose.connect(URI, {
@@ -18,7 +24,7 @@ mongoose.connect(URI, {
 });
 
 const connection = mongoose.connection;
-connection.once("open", function () {
+connection.once("open", () => {
   console.log("MongoDB connected successfully");
 });
 
