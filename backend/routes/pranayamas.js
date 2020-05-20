@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let Pranayama = require("../models/Pranayama.model");
+const Pranayama = require("../models/Pranayama.model");
 
 //READ
 router.route("/").get((req, res) => {
@@ -10,7 +10,13 @@ router.route("/").get((req, res) => {
 
 //CREATE
 router.route("/").post((req, res) => {
-  let pranayama = new Pranayama(req.body);
+  const name = req.body.name;
+  const restriction = req.body.restriction;
+
+  let pranayama = new Pranayama({
+    name,
+    restriction,
+  });
   pranayama
     .save()
     .then(() => res.json("New pranayama added!"))

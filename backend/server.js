@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 
 //-------------------------
 //ROUTES
-const enablingRouter = require("./routes/enabling");
+const pranayamasRouter = require("./routes/pranayamas");
 
-app.use("/enabling", enablingRouter);
+app.use("/pranayamas", pranayamasRouter);
 
 //-------------------------
 //MongoDB Atlas
