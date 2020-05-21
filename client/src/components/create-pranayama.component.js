@@ -30,15 +30,23 @@ export default class CreatePranayama extends Component {
     this.setState({
       name: e.target.value,
     });
+    // console.log(name);
   }
-  onChangeRestriction(e) {
+  //   onChangeRestriction(e) {
+  //     this.setState({
+  //       restriction: e.target.value,
+  //     });
+  //   }
+  //------------------------------
+  onChangeRestriction() {
     this.setState({
-      restriction: e.target.value,
+      restriction: !this.state.restriction,
     });
   }
+
   // 4---------------------
   onSubmit(e) {
-    debugger;
+    // debugger;
     e.preventDefault();
     const pranayama = {
       name: this.state.name,
@@ -68,7 +76,6 @@ export default class CreatePranayama extends Component {
             <label>Restriction:</label>
             <input
               type="checkbox"
-              //   required
               className="form-control"
               value={this.state.restriction}
               onChange={this.onChangeRestriction}

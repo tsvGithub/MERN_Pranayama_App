@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Navbar from "./components/navbar.component";
-import ShowPranayama from "./components/show-pranayama.component";
+import ListPranayamas from "./components/list-pranayamas.component";
 import EditPranayama from "./components/edit-pranayama.component";
 import CreatePranayama from "./components/create-pranayama.component";
 function App() {
@@ -19,7 +19,7 @@ function App() {
         {/* <Navbar /> */}
 
         <Route path="/" exact component={Navbar} />
-        <Route path="/:id" component={ShowPranayama} />
+        <Route path="/:id" component={ListPranayamas} />
         <Route path="/edit/:id" component={EditPranayama} />
         <Route path="/create" component={CreatePranayama} />
         <Route />
