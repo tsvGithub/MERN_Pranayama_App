@@ -30,13 +30,7 @@ export default class CreatePranayama extends Component {
     this.setState({
       name: e.target.value,
     });
-    // console.log(name);
   }
-  //   onChangeRestriction(e) {
-  //     this.setState({
-  //       restriction: e.target.value,
-  //     });
-  //   }
   //------------------------------
   onChangeRestriction() {
     this.setState({

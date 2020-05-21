@@ -33,7 +33,7 @@ router.route("/:id").get((req, res) => {
 
 //DELETE
 router.route("/:id").delete((req, res) => {
-  Pranayama.findByIdAndDelete(req.paramsid)
+  Pranayama.findByIdAndDelete(req.params.id)
     .then(() => res.json("Pranayama deleted!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
