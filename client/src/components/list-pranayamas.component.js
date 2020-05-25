@@ -17,7 +17,9 @@ const Pranayama = (props) => (
         }}
       >
         Delete
-      </a>
+      </a>{" "}
+      ||
+      <Link to={"/" + props.pranayama._id}>Select</Link>
     </td>
   </tr>
 );
