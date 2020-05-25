@@ -18,15 +18,14 @@ export default class EditPranayama extends Component {
     // step 2 --------------------------
 
     this.state = {
-      // name: this.props.match.params.name,
       name: "",
       restriction: false,
-      // restriction: this.props.match.params.restriction,
     };
   }
 
   // step 6 --------------------------
   componentDidMount() {
+    // debugger;
     axios
       .get("http://localhost:5000/pranayamas/" + this.props.match.params.id)
       .then((response) => {

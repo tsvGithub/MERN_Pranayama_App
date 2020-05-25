@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Pranayama = require("../models/Pranayama.model");
 
-//Route => http;//localhost:5000/pranayamas
+//Route => http;//localhost:5000/pranayamas/
 //READ
 router.route("/").get((req, res) => {
   Pranayama.find()
@@ -39,6 +39,7 @@ router.route("/:id").delete((req, res) => {
 });
 
 //UPDATE
+//http://localhost:5000?pranayamas/[id]
 router.route("/:id").put((req, res) => {
   Pranayama.findById(req.params.id)
     .then((pranayama) => {

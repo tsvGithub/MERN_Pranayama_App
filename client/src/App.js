@@ -7,6 +7,7 @@ import EditPranayama from "./components/edit-pranayama.component";
 import CreatePranayama from "./components/create-pranayama.component";
 import SelectedPranayama from "./components/selected-pranayama.component";
 function App() {
+  // debugger
   return (
     <Router>
       <div className="container">
@@ -19,13 +20,11 @@ function App() {
 
         {/* <Navbar /> */}
 
-        <Route path="/" exact component={Navbar} />
-        <Route path="/" component={ListPranayamas} />
+        {/* <Route path="/" exact component={Navbar} /> */}
+        <Route path="/" exact component={ListPranayamas} />
         <Route path="/edit/:id" component={EditPranayama} />
         <Route path="/create" component={CreatePranayama} />
-        <Route path="/:id" component={SelectedPranayama} />
-
-        {/* <Route /> */}
+        <Route path="/:id" exact component={SelectedPranayama} />
       </div>
     </Router>
   );
