@@ -2,9 +2,20 @@ import React, { Component } from "react";
 import axios from "axios";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import sound from "../sounds/bhastrika.m4a";
+import PranayamaPlayer from "./pranayama-player.component";
+// import sound from "../sounds/bhastrika.m4a";
+// import { sounds } from "../sounds";
+// const sounds = require("../sounds");
+
+// console.log(sounds);
 
 // import { Link } from "react-router-dom";
+
+// let sounds = "../sounds/";
+// let soundTrack = [...sounds];
+// console.log(soundTrack);
+// console.log(sound);
+
 export default class SelectedPranayama extends Component {
   // step 1 --------------------
   constructor(props) {
@@ -29,16 +40,24 @@ export default class SelectedPranayama extends Component {
         console.log(error);
       });
   }
-
   render() {
+    // let sound = "../sounds/";
+
     return (
       <div>
         <h1>Selected Pranayama: </h1>
         <h3>{this.state.name}</h3>
         <h4>{this.state.restriction ? "Yes" : "No"}</h4>
         {/* <h4>{(src = `./sounds/${this.state.name}.m4a`)}</h4> */}
-        <AudioPlayer src={sound} onPlay={(e) => console.log("onPlay")} />
-        {/* <AudioPlayer src="./sounds/${this.state.name}.m4a" onPlay={(e) => console.log("onPlay")} /> */}
+        {/* <AudioPlayer src={sound} onPlay={(e) => console.log("onPlay")} />
+        <img src={`${require('../static/images/foo.png')}`} /> */}
+        {/* <AudioPlayer src={`${require(sound + `${this.state.name}`)}`} onPlay={(e) => console.log("onPlay")} /> */}
+        {/* <AudioPlayer src={`${require(sound + `${this.state.name}`)}`} onPlay={(e) => console.log("onPlay")} /> */}
+        {/* import sound from "../sounds/bhastrika.m4a"; */}
+        {/* <AudioPlayer src={require(`../sounds/${this.state.name}.m4a`)} onPlay={(e) => console.log("onPlay")} /> */}
+        {/*********************** */}
+        {/* <AudioPlayer src={`${require("../sounds/bhastrika.m4a")}`} onPlay={(e) => console.log("onPlay")} /> */}
+        <PranayamaPlayer name={this.state.name} restriction={this.state.restriction} />
       </div>
     );
   }

@@ -30,5 +30,8 @@
   "homepage": "https://github.com/tsvGithub/MERN_Pranayama_App#readme",
   "devDependencies": {
     "concurrently": "^5.2.0"
+  },
+  "dependencies": {
+    "react-sound": "^1.2.0"
   }
 }
