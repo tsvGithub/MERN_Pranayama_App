@@ -13,10 +13,12 @@ router.route("/").get((req, res) => {
 router.route("/").post((req, res) => {
   const name = req.body.name;
   const restriction = req.body.restriction;
+  const url = req.body.url;
 
   let pranayama = new Pranayama({
     name,
     restriction,
+    url,
   });
   pranayama
     .save()
@@ -45,6 +47,7 @@ router.route("/:id").put((req, res) => {
     .then((pranayama) => {
       pranayama.name = req.body.name;
       pranayama.restriction = req.body.restriction;
+      pranayama.url = req.body.url;
       pranayama
         .save()
         .then(() => res.json("Pranayama updated!"))

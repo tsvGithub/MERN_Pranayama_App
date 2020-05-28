@@ -13,6 +13,7 @@ export default class EditPranayama extends Component {
     // step 5 ------------------------------
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeRestriction = this.onChangeRestriction.bind(this);
+    this.onChangeUrl = this.onChangeUrl.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     // step 2 --------------------------
@@ -20,6 +21,7 @@ export default class EditPranayama extends Component {
     this.state = {
       name: "",
       restriction: false,
+      url: "",
     };
   }
 
@@ -32,6 +34,7 @@ export default class EditPranayama extends Component {
         this.setState({
           name: response.data.name,
           restriction: response.data.restriction,
+          url: response.data.url,
         });
       })
       .catch(function (error) {
@@ -49,6 +52,12 @@ export default class EditPranayama extends Component {
       restriction: !this.state.restriction,
     });
   }
+  //-------------------------
+  onChangeUrl(e) {
+    this.setState({
+      url: e.target.value,
+    });
+  }
 
   // step 4 -----------------
   onSubmit(e) {
@@ -57,6 +66,7 @@ export default class EditPranayama extends Component {
     const pranayama = {
       name: this.state.name,
       restriction: this.state.restriction,
+      url: this.state.url,
     };
     console.log(pranayama);
 
@@ -79,7 +89,7 @@ export default class EditPranayama extends Component {
             <label>Name:</label>
             <input
               type="text"
-              required
+              // required
               placeholder={this.state.name}
               className="form-control"
               value={this.state.name}
@@ -95,6 +105,17 @@ export default class EditPranayama extends Component {
               value={this.state.restriction}
               onChange={this.onChangeRestriction}
               checked={this.state.restriction}
+            />
+          </div>
+          <div className="form-group">
+            <label>URL:</label>
+            <input
+              type="text"
+              // required
+              className="form-control"
+              placeholder={this.state.url}
+              value={this.state.url}
+              onChange={this.onChangeUrl}
             />
           </div>
 

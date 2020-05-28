@@ -12,12 +12,14 @@ export default class CreatePranayama extends Component {
     // 5 ---------------------
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeRestriction = this.onChangeRestriction.bind(this);
+    this.onChangeUrl = this.onChangeUrl.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     // 2------------------
     this.state = {
       name: "",
       restriction: false,
+      url: "",
     };
   }
   // 6------------------------
@@ -37,6 +39,12 @@ export default class CreatePranayama extends Component {
       restriction: !this.state.restriction,
     });
   }
+  //-------------------------
+  onChangeUrl(e) {
+    this.setState({
+      url: e.target.value,
+    });
+  }
 
   // 4---------------------
   onSubmit(e) {
@@ -45,6 +53,7 @@ export default class CreatePranayama extends Component {
     const pranayama = {
       name: this.state.name,
       restriction: this.state.restriction,
+      url: this.state.url,
     };
     console.log(pranayama);
 
@@ -74,6 +83,10 @@ export default class CreatePranayama extends Component {
               value={this.state.restriction}
               onChange={this.onChangeRestriction}
             />
+          </div>
+          <div className="form-group">
+            <label>URL:</label>
+            <input type="text" className="form-control" value={this.state.url} onChange={this.onChangeUrl} />
           </div>
 
           <div className="form-group">

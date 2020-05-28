@@ -1,4 +1,6 @@
 import React from "react";
+// import Sound from "react-sound";
+
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 
@@ -15,10 +17,10 @@ import "react-h5-audio-player/lib/styles.css";
 // console.log(soundTrack);
 // console.log(sound);
 
-let sound = require("../sounds/bhastrika.m4a");
+// let sound = require("../sounds/bhastrika.m4a");
 
 const PranayamaPlayer = (props) => {
-  debugger;
+  //   debugger;
   //   let currentTrack = props.name;
   //   console.log(currentTrack);
   //   let sound = require("../sounds/bhastrika.m4a");
@@ -55,9 +57,18 @@ const PranayamaPlayer = (props) => {
       {/* {checkName()} */}
 
       {props.name}
-      <AudioPlayer src={sound} onPlay={(e) => console.log("onPlay")} />
+      {props.url}
+      {/* <Sound
+        url={props.url}
+        playStatus={Sound.status.PLAYING}
+        // playFromPosition={300 /* in milliseconds */}
+      {/* onLoading={this.handleSongLoading}
+        onPlaying={this.handleSongPlaying}
+        onFinishedPlaying={this.handleSongFinishedPlaying}
+      /> */}
+      {/* <AudioPlayer src={sound} onPlay={(e) => console.log("onPlay")} /> */}
       {/* <AudioPlayer src={`${require("../sounds/bhastrika.m4a")}`} onPlay={(e) => console.log("onPlay")} /> */}
-      {/* <AudioPlayer src={checkName(sound)} onPlay={(e) => console.log("onPlay")} /> */}
+      <AudioPlayer src={props.url} onPlay={(e) => console.log("onPlay")} />
       {/* <AudioPlayer
         src="https://drive.google.com/file/d/1dKJMBeQkMZrs6LmZVIjfVeWhx0VMkg8Y/view?usp=sharing"
         onPlay={(e) => console.log("onPlay")}
