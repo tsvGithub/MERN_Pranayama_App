@@ -1,5 +1,5 @@
 import React from "react";
-// import Sound from "react-sound";
+import Sound from "react-sound";
 
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
@@ -56,13 +56,13 @@ const PranayamaPlayer = (props) => {
     <div>
       {/* {checkName()} */}
 
-      {props.name}
-      {props.url}
+      {/* {props.name}
+      {props.url} */}
+      <br />
       {/* <Sound
         url={props.url}
         playStatus={Sound.status.PLAYING}
-        // playFromPosition={300 /* in milliseconds */}
-      {/* onLoading={this.handleSongLoading}
+        onLoading={this.handleSongLoading}
         onPlaying={this.handleSongPlaying}
         onFinishedPlaying={this.handleSongFinishedPlaying}
       /> */}
@@ -77,4 +77,4 @@ const PranayamaPlayer = (props) => {
   );
 };
 
-export default PranayamaPlayer;
+// export default PranayamaPlayer;

@@ -71,7 +71,7 @@ export default class ListPranayamas extends Component {
           pranayama={currentPranayama}
           deletePranayama={this.deletePranayama}
           restriction={currentPranayama.restriction}
-          // restriction={this.restriction}
+          url={currentPranayama.url}
           key={currentPranayama._id}
         />
       );
