@@ -19,16 +19,16 @@ const audios = {
   kapalabphati: kapalabphati,
   ujjayi: ujjayi,
 };
-const pranayama = () => {
-  debugger;
-  Object.keys(audios);
-};
+// const pranayama = () => {
+//   debugger;
+//   Object.keys(audios);
+// };
 
-console.log(Object.keys(audios));
+// console.log(Object.keys(audios));
 
-pranayama();
-console.log(Object.keys(audios)); //Array
-console.log(Object.values(audios)); //Array
+// pranayama();
+// console.log(Object.keys(audios)); //Array
+// console.log(Object.values(audios)); //Array
 
 //----------------------
 
@@ -96,20 +96,19 @@ export default class SelectedPranayama extends Component {
   render() {
     // debugger;
     // console.log(audios[this.state.name]);
-    console.log(audios); //Object + pranayama() ni4ego
+    // console.log(audios); //Object + pranayama() ni4ego
 
-    const currentAudio = this.state.name;
-    console.log(currentAudio); // pusto i na 4yj raz nazvanie
-    //!!!???
-    const track = audios.currentAudio;
-    console.log(track); // undefined
+    // const currentAudio = this.state.name;
+    // console.log(currentAudio); // pusto i na 4yj raz nazvanie
+    // //!!!???
+    // const track = audios.currentAudio;
+    // console.log(track); // undefined
 
     return (
       <div>
         <h1>Selected Pranayama: </h1>
         <h3>{this.state.name}</h3>
-        <h3>{this.src}</h3>
-        <h3>{this.state.url}</h3>
+        {/* <h3>{this.state.url}</h3> */}
         <h4>{this.state.restriction ? "Yes" : "No"}</h4>
         {/* <h4>{(src = `./sounds/${this.state.name}.m4a`)}</h4> */}
         {/* <AudioPlayer src={sound} onPlay={(e) => console.log("onPlay")} /> */}

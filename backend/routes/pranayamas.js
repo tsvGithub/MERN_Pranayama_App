@@ -1,14 +1,23 @@
 const router = require("express").Router();
 const Pranayama = require("../models/Pranayama.model");
 
-//Route => http;//localhost:5000/pranayamas/
+//Route => http://localhost:5000/pranayamas/
 //READ
 router.route("/").get((req, res) => {
   Pranayama.find()
     .then((pranayamas) => res.json(pranayamas))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+// //------------------------
+// router.route("/disabling").get((req, res) => {
+//   debugger;
+//   Pranayama.find({ restriction: true })
+//     .then((pranayamas) => console.log(pranayamas))
+//     // .then((pranayamas) => res.json(pranayamas))
+//     .catch((err) => res.status(400).json("Error: " + err));
+// });
 
+//----------------------
 //CREATE
 router.route("/").post((req, res) => {
   const name = req.body.name;

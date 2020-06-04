@@ -11,8 +11,10 @@ app.use(bodyParser.json());
 //-------------------------
 //ROUTES
 const pranayamasRouter = require("./routes/pranayamas");
-
 app.use("/pranayamas", pranayamasRouter);
+
+const disablingPranayamasRouter = require("./routes/disabling");
+app.use("/disabling", disablingPranayamasRouter);
 
 //-------------------------
 //MongoDB Atlas

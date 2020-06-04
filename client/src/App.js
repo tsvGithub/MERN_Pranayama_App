@@ -6,6 +6,7 @@ import ListPranayamas from "./components/list-pranayamas.component";
 import EditPranayama from "./components/edit-pranayama.component";
 import CreatePranayama from "./components/create-pranayama.component";
 import SelectedPranayama from "./components/selected-pranayama.component";
+import ListDisabledPranayamas from "./components/list-disabled_pranayamas.component";
 function App() {
   // debugger
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/edit/:id" component={EditPranayama} />
         <Route path="/create" component={CreatePranayama} />
         <Route path="/:id" exact component={SelectedPranayama} />
+        {/*04/06 */}
+        <Route path="/disabling" exact component={ListDisabledPranayamas} />
       </div>
     </Router>
   );
