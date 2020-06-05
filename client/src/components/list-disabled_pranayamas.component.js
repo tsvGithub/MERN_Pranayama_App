@@ -34,7 +34,7 @@ export default class ListDisabledPranayamas extends Component {
     super(props);
 
     // 4 --------------------------
-    // this.deletePranayama = this.deletePranayama.bind(this);
+    this.deletePranayama = this.deletePranayama.bind(this);
     // 2 ------------------------------
     this.state = {
       pranayamas: [],
@@ -43,7 +43,9 @@ export default class ListDisabledPranayamas extends Component {
   // 5 -------------------------
   componentDidMount() {
     axios
-      .get("http://localhost:5000/disabling/")
+      .get("http://localhost:5000/pranayamas/")
+
+      //   .get("http://localhost:5000/disabling/")
       .then((response) => {
         this.setState({ pranayamas: response.data });
       })
@@ -52,29 +54,31 @@ export default class ListDisabledPranayamas extends Component {
       });
   }
   // 3 -------------------------------
-  //   deletePranayama(id) {
-  //     axios.delete("http://localhost:5000/pranayamas/" + id).then((response) => {
-  //       console.log(response.data);
-  //     });
-  //     this.setState({
-  //       pranayamas: this.state.pranayamas.filter((el) => el._id !== id),
-  //     });
-  //   }
+  deletePranayama(id) {
+    axios.delete("http://localhost:5000/pranayamas/" + id).then((response) => {
+      console.log(response.data);
+    });
+    this.setState({
+      pranayamas: this.state.pranayamas.filter((el) => el._id !== id),
+    });
+  }
 
   // 7 for <tbody> step 6
 
   pranayamasList() {
     return this.state.pranayamas.map((currentPranayama) => {
-      // debugger;
-      return (
-        <Pranayama
-          pranayama={currentPranayama}
-          //   deletePranayama={this.deletePranayama}
-          restriction={currentPranayama.restriction}
-          url={currentPranayama.url}
-          key={currentPranayama._id}
-        />
-      );
+      if (!currentPranayama.restriction) {
+        // debugger;
+        return (
+          <Pranayama
+            pranayama={currentPranayama}
+            deletePranayama={this.deletePranayama}
+            restriction={currentPranayama.restriction}
+            url={currentPranayama.url}
+            key={currentPranayama._id}
+          />
+        );
+      }
     });
   }
   //==================
