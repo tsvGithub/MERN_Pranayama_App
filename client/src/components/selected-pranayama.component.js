@@ -69,6 +69,7 @@ export default class SelectedPranayama extends Component {
   componentDidMount() {
     // debugger;
     axios
+      // .get("http://localhost:5000/pranayamas/" + this.props.match.params._id)
       .get("http://localhost:5000/pranayamas/" + this.props.match.params.id)
       .then((response) => {
         this.setState({

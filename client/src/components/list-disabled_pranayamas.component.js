@@ -67,7 +67,7 @@ export default class ListDisabledPranayamas extends Component {
 
   pranayamasList() {
     return this.state.pranayamas.map((currentPranayama) => {
-      if (!currentPranayama.restriction) {
+      if (currentPranayama.restriction) {
         // debugger;
         return (
           <Pranayama
