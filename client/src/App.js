@@ -12,15 +12,23 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Link to="/">
+        <h1> Hello!</h1>
+        <button>
+          <Link to="/">Breath Pranayamas</Link>
+        </button>
+        <button>
+          <Link to="/create">Create Pranayama</Link>
+        </button>
+
+        {/* <Link to="/">
           <button>All Pranayamas</button>
-        </Link>
+        </Link> */}
         {/* <Link to="/disabling">
           <button>Disabling Pranayamas</button>
         </Link> */}
-        <Link to="/create">
+        {/* <Link to="/create">
           <button>Create New Pranayama</button>
-        </Link>
+        </Link> */}
 
         {/* <Navbar /> */}
 
